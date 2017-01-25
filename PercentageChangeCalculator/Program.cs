@@ -51,7 +51,7 @@ namespace PercentageChangeCalculator
                     readInputnumber = decimal.Parse(Console.ReadLine());
                     numberOK = true;
                 }
-                catch(Exception ex)
+                catch(Exception ex) 
                 {
                     Console.WriteLine($"Error: {ex.Message}");
                 }
