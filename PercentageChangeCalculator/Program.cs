@@ -6,11 +6,21 @@ using System.Threading.Tasks;
 
 namespace PercentageChangeCalculator
 {
-    class Program
+    public class Program
     {
         static void Main()
         {
             Console.WriteLine("Just testing");
         }
+
+        public static decimal CalculatePercentageChange(decimal numberOrig, decimal numberNew)
+        {
+            decimal percentageChangeResult = 0;
+
+            percentageChangeResult = ((numberNew - numberOrig) / numberOrig) * 100;
+
+            return percentageChangeResult;
+        }
+
     }
 }
