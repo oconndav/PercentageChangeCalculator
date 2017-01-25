@@ -1,6 +1,6 @@
 ﻿/*
 This is a very simple console app that takes two numbers and returns
-the percentage change between the first number and the second
+the percentage change between the first number and the second number
 */
 
 
@@ -17,18 +17,15 @@ namespace PercentageChangeCalculator
         static void Main()
         {
             Console.WriteLine("Welcome to our simple Percentage Change Calculator App");
-
-            
-            decimal numberOrig = readInputNumber("original");
-
-            
+           
+            decimal numberOrig = readInputNumber("original");            
             decimal numberNew = readInputNumber("new");
-
+ 
             decimal result = CalculatePercentageChange(numberOrig, numberNew);
 
-            Console.WriteLine($"The change from your original number to your new number is: {result.ToString("#.##")}%");
+            // display result back to user
+            Console.WriteLine($"The change from your original number to your new number is: {result.ToString("0.##")}%");
             Console.ReadKey();
-
             
         }
 
