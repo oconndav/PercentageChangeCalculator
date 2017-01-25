@@ -26,8 +26,10 @@ namespace PercentageChangeCalculator
 
             decimal result = CalculatePercentageChange(numberOrig, numberNew);
 
-            Console.WriteLine($"The result is: {result}");
-            Console.ReadKey();   
+            Console.WriteLine($"The change from your original number to your new number is: {result.ToString("#.##")}%");
+            Console.ReadKey();
+
+            
         }
 
         public static decimal CalculatePercentageChange(decimal numberOrig, decimal numberNew)
