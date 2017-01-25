@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+This is a very simple console app that takes two numbers and returns
+the percentage change between the first number and the second
+*/
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,11 +18,11 @@ namespace PercentageChangeCalculator
         {
             Console.WriteLine("Welcome to our simple Percentage Change Calculator App");
 
-            Console.WriteLine("Please enter the original number: ");
-            decimal numberOrig = readInputNumber();
+            
+            decimal numberOrig = readInputNumber("original");
 
-            Console.WriteLine("Please enter the new number: ");
-            decimal numberNew = readInputNumber();
+            
+            decimal numberNew = readInputNumber("new");
 
             decimal result = CalculatePercentageChange(numberOrig, numberNew);
 
@@ -33,11 +39,30 @@ namespace PercentageChangeCalculator
             return percentageChangeResult;
         }
 
-        public static decimal readInputNumber()
+        public static decimal readInputNumber(string numberID)
         {
-            decimal readInputnumber = decimal.Parse(Console.ReadLine());
+            bool numberOK = false;
+            decimal readInputnumber = 0;
+
+            do
+            {
+                try
+                {
+                    Console.WriteLine($"Please enter the {numberID} number: ");
+                    readInputnumber = decimal.Parse(Console.ReadLine());
+                    numberOK = true;
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+            }
+            while (!numberOK);
 
             return readInputnumber;
+
+
+
         }
 
     }
