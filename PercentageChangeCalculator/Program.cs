@@ -49,7 +49,7 @@ namespace PercentageChangeCalculator
                 {
                     Console.WriteLine($"Please enter the {numberID} number: ");
                     readInputnumber = decimal.Parse(Console.ReadLine());
-                    numberOK = true;
+                    numberOK = true; 
                 }
                 catch(Exception ex) 
                 {
