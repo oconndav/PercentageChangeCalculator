@@ -10,6 +10,7 @@ namespace PercentageChangeCalculator
     {
         static void Main()
         {
+            Console.WriteLine("Just testing");
         }
     }
 }
