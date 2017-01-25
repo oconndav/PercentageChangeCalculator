@@ -12,7 +12,7 @@ namespace PercentageChangeCalculator.Tests
     public class ProgramTests
     {
         [TestMethod()]
-        public void CalculatePercentageChangeTest()
+        public void CalculatePercentageChangeTestNEGATIVE()
         {
             //arrange
             decimal numberOrig = 21;
@@ -34,5 +34,32 @@ namespace PercentageChangeCalculator.Tests
 
 
         }
+
+
+        [TestMethod()]
+        public void CalculatePercentageChangeTestPOSTIVE()
+        {
+            //arrange
+            decimal numberOrig = 49; 
+            decimal numberNew = 53;
+            decimal calculatedResult;
+            decimal expectedResult = 8.163265306122448979591836730M;
+
+            //act
+            calculatedResult = PercentageChangeCalculator.Program.CalculatePercentageChange(numberOrig, numberNew);
+
+            //assert
+            Console.WriteLine($"calculated result is {calculatedResult}");
+
+
+            if (calculatedResult != expectedResult)
+            {
+                Assert.Fail();
+            }
+
+
+        }
+
+
     }
 }
