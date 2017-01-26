@@ -18,13 +18,16 @@ namespace PercentageChangeCalculator
         {
             Console.WriteLine("Welcome to our simple Percentage Change Calculator App");
            
+            //user input is handled and valided by a reusable method
             decimal numberOrig = readInputNumber("original");            
             decimal numberNew = readInputNumber("new");
- 
+
+            //carry out the actual calculation
             decimal result = CalculatePercentageChange(numberOrig, numberNew);
 
             // display result back to user
             Console.WriteLine($"The change from your original number to your new number is: {result.ToString("0.##")}%");
+            Console.WriteLine("Press any key to exit");
             Console.ReadKey();
             
         }
@@ -53,7 +56,7 @@ namespace PercentageChangeCalculator
                 }
                 catch(Exception ex) 
                 {
-                    Console.WriteLine($"Error: {ex.Message}");
+                    Console.WriteLine($"Sorry that is an invalid number. (Error code: {ex.Message})");
                 }
             }
             while (!numberOK);
