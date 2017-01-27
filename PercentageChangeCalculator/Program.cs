@@ -48,16 +48,22 @@ namespace PercentageChangeCalculator
 
             do
             {
-                try
+                
+                decimal enteredNumber = 0;
+
+                Console.WriteLine($"Please enter the {numberID} number: ");
+                
+                // ensure that the number entered is valid decimal
+                if (decimal.TryParse(Console.ReadLine(), out enteredNumber))
                 {
-                    Console.WriteLine($"Please enter the {numberID} number: ");
-                    readInputnumber = decimal.Parse(Console.ReadLine());
-                    numberOK = true; 
+                    readInputnumber = enteredNumber;
+                    numberOK = true;
                 }
-                catch(Exception ex) 
+                else
                 {
-                    Console.WriteLine($"Sorry that is an invalid number. (Error code: {ex.Message})");
+                    Console.WriteLine("Sorry invalid entry, please try again");
                 }
+
             }
             while (!numberOK);
 
