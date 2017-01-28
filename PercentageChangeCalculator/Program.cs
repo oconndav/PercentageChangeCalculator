@@ -22,8 +22,8 @@ namespace PercentageChangeCalculator
             decimal numberOrig = readInputNumber("original");            
             decimal numberNew = readInputNumber("new");
 
-            //carry out the actual calculation
-            decimal result = CalculatePercentageChange(numberOrig, numberNew);
+            //carry out the actual calculation, handling this in a seperate class for demonstration purposes.
+            decimal result = SimplePercentage.CalculatePercentageChange(numberOrig, numberNew);
 
             // display result back to user
             Console.WriteLine($"The change from your original number to your new number is: {result.ToString("0.##")}%");
@@ -32,14 +32,7 @@ namespace PercentageChangeCalculator
             
         }
 
-        public static decimal CalculatePercentageChange(decimal numberOrig, decimal numberNew)
-        {
-            decimal percentageChangeResult = 0;
-
-            percentageChangeResult = ((numberNew - numberOrig) / numberOrig) * 100;
-
-            return percentageChangeResult;
-        }
+        
 
         public static decimal readInputNumber(string numberID)
         {

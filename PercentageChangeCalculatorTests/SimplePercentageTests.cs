@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 namespace PercentageChangeCalculator.Tests
 {
     [TestClass()]
-    public class ProgramTests
+    public class SimplePercentageTests
     {
         [TestMethod()]
-        public void CalculatePercentageChangeTestNEGATIVE()
+        public void CalculatePercentageChangeTestNegative()
         {
             //arrange
             decimal numberOrig = 21;
@@ -21,7 +21,9 @@ namespace PercentageChangeCalculator.Tests
             decimal expectedResult = -28.571428571428571428571428570M;
 
             //act
-            calculatedResult = PercentageChangeCalculator.Program.CalculatePercentageChange(numberOrig, numberNew);
+            calculatedResult = SimplePercentage.CalculatePercentageChange(numberOrig, numberNew);
+
+
 
             //assert
             Console.WriteLine($"calculated result is {calculatedResult}");
@@ -32,21 +34,19 @@ namespace PercentageChangeCalculator.Tests
                 Assert.Fail();
             }
 
-
         }
-
 
         [TestMethod()]
         public void CalculatePercentageChangeTestPOSTIVE()
         {
             //arrange
-            decimal numberOrig = 49; 
+            decimal numberOrig = 49;
             decimal numberNew = 53;
             decimal calculatedResult;
             decimal expectedResult = 8.163265306122448979591836730M;
 
             //act
-            calculatedResult = PercentageChangeCalculator.Program.CalculatePercentageChange(numberOrig, numberNew);
+            calculatedResult = SimplePercentage.CalculatePercentageChange(numberOrig, numberNew);
 
             //assert
             Console.WriteLine($"calculated result is {calculatedResult}");
@@ -59,7 +59,5 @@ namespace PercentageChangeCalculator.Tests
 
 
         }
-
-
     }
 }
